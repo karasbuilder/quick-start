@@ -1,10 +1,10 @@
 "use client";
-import { http } from "viem";
+
 import "@rainbow-me/rainbowkit/styles.css";
 import { BiconomyProvider } from "@biconomy/use-aa";
 import { getDefaultConfig, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { WagmiProvider } from "wagmi";
-import { polygonAmoy } from "wagmi/chains";
+import { monadTestnet } from "wagmi/chains";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
 if (
@@ -21,7 +21,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
   const config = getDefaultConfig({
     appName: "Demo App",
     projectId: "YOUR_PROJECT_ID",
-    chains: [polygonAmoy],
+    chains: [monadTestnet],
     ssr: true,
   });
   const queryClient = new QueryClient();
